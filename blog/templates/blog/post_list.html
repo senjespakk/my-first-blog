@@ -1,10 +1,22 @@
 <html>
     <head>
         <title>Kelly's blog</title>
+    
     </head>
     <body>
-        <p>Hi there!</p>
-        <p>It works!</p>
+        <div>
+            <h1><a href="/">DJANGO GIRLS BLOG</a></h1>
+            <h4>by Kelly Baddest</h4>
+        </div>
+        {% for post in posts %}
+        <div>
+            <P> published: {{post.published_date}} </P>
+            <h2><a href=""> {{post.title}} </a></h2>
+            <p>{{ post.text|linebreaksbr|truncatewords:30 }}</p>
+        </div>
+        {% endfor %}    
+
+
     </body>
 
 </html>
